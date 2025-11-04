@@ -46,8 +46,7 @@ Catch falling fruits with your paddle, avoid hazards, activate power‑ups, rack
 ##  Installation & Running  
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/your‑username/catch‑the‑falling‑fruit.git
-   cd catch‑the‑falling‑fruit
+
 Install dependencies (if not already):
 
 bash
