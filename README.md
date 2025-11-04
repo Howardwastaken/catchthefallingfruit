@@ -110,7 +110,7 @@ Status	Description
 
  Credits & License
 Author: Howard Renshaw 
-🧍 PLAYER MOVEMENT SYSTEM
+ PLAYER MOVEMENT SYSTEM
 if keys[pygame.K_LEFT]:
     player["vel"] -= player["accel"]
 elif keys[pygame.K_RIGHT]:
@@ -138,9 +138,9 @@ Velocity directly controls how far the player moves horizontally per frame.
 
 clamp(player["vel"], -player["max_speed"], player["max_speed"]): Restricts velocity between a minimum and maximum limit so the player doesn’t move too fast or in reverse uncontrollably.
 
-✅ Mechanically, this system works because each frame updates both velocity and position, using real-time keyboard input and physical decay for realism.
+ Mechanically, this system works because each frame updates both velocity and position, using real-time keyboard input and physical decay for realism.
 
-🍎 FRUIT FALLING & MOTION
+ FRUIT FALLING & MOTION
 fruit["x"] += sin(fruit["wobble"]) * 0.6
 fruit["y"] += fruit["speed"]
 
@@ -156,9 +156,9 @@ The speed variable defines how fast the fruit falls.
 
 Together, this creates a sinusoidal wobble as it descends.
 
-✅ Works because Pygame updates screen every frame; these two position updates move each fruit slightly each frame.
+Works because Pygame updates screen every frame; these two position updates move each fruit slightly each frame.
 
-🎯 COLLISION DETECTION & SCORING
+COLLISION DETECTION & SCORING
 player_rect = pygame.Rect(player["x"], player["y"], player["w"], player["h"])
 fruit_rect = pygame.Rect(fruit["x"]-fruit["size"], fruit["y"]-fruit["size"], fruit["size"]*2, fruit["size"]*2)
 
@@ -178,9 +178,9 @@ If True, it means the fruit has been caught.
 
 score += fruit["points"]: Adds the fruit’s point value to total score immediately.
 
-✅ Works because Pygame’s rectangle collision is calculated each frame — as positions update, overlap triggers once contact occurs.
+ Works because Pygame’s rectangle collision is calculated each frame — as positions update, overlap triggers once contact occurs.
 
-💣 BOMB MECHANIC & LOSING LIVES
+ BOMB MECHANIC & LOSING LIVES
 if fruit.get("power") == "bomb":
     lives -= 1
     hud_flash = {"color": RED, "timer": 0}
@@ -201,9 +201,9 @@ if lives <= 0: checks if health has run out.
 
 game_over() then stops the game or triggers reset logic.
 
-✅ Works because each fruit carries metadata ("power") and the game loop constantly checks for those flags after collisions.
+ Works because each fruit carries metadata ("power") and the game loop constantly checks for those flags after collisions.
 
-⚡ POWER-UPS SYSTEM
+ POWER-UPS SYSTEM
 effects = ["double_points", "reverse", "shrink", "grow", "freeze", "bonus_points"]
 effect = random.choice(effects)
 apply_mystery_effect(effect)
@@ -227,9 +227,9 @@ Examples inside that function:
 
 "bonus_points" → directly adds to score.
 
-✅ Works because each power-up manipulates existing gameplay variables used elsewhere (velocity, score, width), changing the behavior immediately.
+ Works because each power-up manipulates existing gameplay variables used elsewhere (velocity, score, width), changing the behavior immediately.
 
-🔋 POWER BAR & SUPER MODE
+ POWER BAR & SUPER MODE
 power_bar = clamp(power_bar + POWER_PER_CATCH, 0.0, 100.0)
 if power_bar >= 100 and event.key == pygame.K_SPACE:
     SUPER_ACTIVE = True
@@ -251,9 +251,9 @@ SUPER_ACTIVE = True flags that super mode is active.
 
 super_start = pygame.time.get_ticks() records the exact start time (used later to end the mode after duration expires).
 
-✅ Works because both input and timing systems rely on event loops — these variables modify rendering and scoring behaviors while True.
+ Works because both input and timing systems rely on event loops — these variables modify rendering and scoring behaviors while True.
 
-💡 HUD / SCOREBOARD SYSTEM
+ HUD / SCOREBOARD SYSTEM
 neon_text(screen, f"Score: {score}", med_font, (hud_x + 90, hud_y + 22),
           WHITE, NEON_PINK, glow_strength=2)
 neon_text(screen, f"Lives: {lives}", med_font, (hud_x + 200, hud_y + 22),
@@ -273,9 +273,9 @@ WHITE, NEON_PINK are the base and glow colors.
 
 glow_strength=2 draws several layers of colored text with slight transparency — that layering creates the glow effect.
 
-✅ Works because every frame, the draw loop calls neon_text() with the latest variable values, and the text function re-renders it visually.
+ Works because every frame, the draw loop calls neon_text() with the latest variable values, and the text function re-renders it visually.
 
-🔁 COMBO SYSTEM
+COMBO SYSTEM
 combo += 1
 multiplier = 1 + (combo // 5) * 0.5
 pts = int(base_points * multiplier)
