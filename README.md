@@ -1,13 +1,13 @@
 # catchthefallingfruit
 
-# 🎮 Catch the Falling Fruit — Full Arcade Prototype
+#  Catch the Falling Fruit — Full Arcade Prototype
 
 **Catch the Falling Fruit** is a self‑contained arcade‑style game built with Python and Pygame.  
 Catch falling fruits with your paddle, avoid hazards, activate power‑ups, rack up combos, and survive increasing levels of challenge.
 
 ---
 
-## 📋 Table of Contents  
+##  Table of Contents  
 - [Features](#features)  
 - [Technologies](#technologies)  
 - [Installation & Running](#installation--running)  
@@ -18,7 +18,7 @@ Catch falling fruits with your paddle, avoid hazards, activate power‑ups, rack
 
 ---
 
-## ✨ Features  
+##  Features  
 - Paddle movement with smooth acceleration, friction & velocity‑clamp.  
 - Multiple fruit types: regular, slow‑power, bomb hazard.  
 - Mystery orbs spawning periodically that trigger random effects: *double points*, *reverse controls*, *shrink/grow paddle*, *freeze time*, *bonus points*.  
@@ -31,7 +31,7 @@ Catch falling fruits with your paddle, avoid hazards, activate power‑ups, rack
 
 ---
 
-## 🛠 Technologies  
+## Technologies  
 - **Python 3.x**  
 - **Pygame** — game window, input, rendering  
 - Standard Python libraries: `random`, `sys`, `os`, `traceback`, `math`  
@@ -43,7 +43,7 @@ Catch falling fruits with your paddle, avoid hazards, activate power‑ups, rack
 
 ---
 
-## 🚀 Installation & Running  
+##  Installation & Running  
 1. Clone the repository:  
    ```bash
    git clone https://github.com/your‑username/catch‑the‑falling‑fruit.git
@@ -60,7 +60,7 @@ Copy code
 python main.py
 Game window will open in windowed mode (480×720). Use ← and → to move the paddle. Press SPACE when the power bar is full to activate Super Mode.
 
-🎮 How to Play
+ How to Play
 Move the paddle left/right to catch fruits and avoid bombs.
 
 Normal fruits increase your score; special fruits may trigger power‑ups or hazards.
@@ -73,7 +73,7 @@ Avoid falling bombs and horizontal lasers — each hit reduces your lives.
 
 Survive as long as possible — the game ends when lives reach zero. Your high score is saved.
 
-🧩 Code Highlights
+ Code Highlights
 Player Movement & Physics
 python
 Copy code
@@ -102,11 +102,11 @@ effect = random.choice(effects)
 apply_mystery_effect(effect)
 A random effect is chosen and applied via apply_mystery_effect(), which modifies game state (e.g., paddle size, reverse controls, score bonus).
 
-📊 Project Status
+ Project Status
 Status	Description
-✅ Prototype	All core mechanics implemented and functioning
-🔧 Polishing	Known bugs to fix: multiple power‑up overlap, balancing difficulty curves
-🚧 Future Work	Feature ideas: sound/music, new fruit types, online high‑score leaderboard
+ Prototype	All core mechanics implemented and functioning
+ Polishing	Known bugs to fix: multiple power‑up overlap, balancing difficulty curves
+ Future Work	Feature ideas: sound/music, new fruit types, online high‑score leaderboard
 
-🤝 Credits & License
+ Credits & License
 Author: Howard Renshaw 
